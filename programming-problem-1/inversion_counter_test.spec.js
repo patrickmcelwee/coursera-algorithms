@@ -43,6 +43,21 @@ describe("InversionCountery", function() {
 
     var result = counter.count([2, 1, 4, 3]);
     expect(result).toEqual(2);
+
+    var result = counter.count([2, 3, 1, 4]);
+    expect(result).toEqual(2);
   });
 
+  it("works for four integers with three inversions", function() {
+    var result = counter.count([4, 1, 2, 3]);
+    expect(result).toEqual(3);
+
+    var result = counter.count([2, 4, 1, 3]);
+    expect(result).toEqual(3);
+  });
+
+  it("works for four integers with six inversions", function() {
+    var result = counter.count([4, 3, 2, 1]);
+    expect(result).toEqual(6);
+  });
 })

@@ -39,7 +39,7 @@ InversionCounter.prototype.mergeAndCount = function(sortedArray1, sortedArray2) 
     } else {
       merged.push(sortedArray2[j]);
       j = j + 1;
-      acc = acc + 1;
+      acc = acc + (n - i);
     };
   };
 
