@@ -34,4 +34,15 @@ describe("InversionCountery", function() {
     expect(result3).toEqual(1);
   });
 
+  it("works for four integers with two inversions", function() {
+    var result = counter.count([3, 1, 2, 4]);
+    expect(result).toEqual(2);
+
+    var result = counter.count([1, 4, 2, 3]);
+    expect(result).toEqual(2);
+
+    var result = counter.count([2, 1, 4, 3]);
+    expect(result).toEqual(2);
+  });
+
 })

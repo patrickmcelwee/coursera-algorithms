@@ -26,8 +26,6 @@ InversionCounter.prototype.countAndSort = function(array) {
 };
 
 InversionCounter.prototype.mergeAndCount = function(sortedArray1, sortedArray2) {
-  console.log(sortedArray1);
-  console.log(sortedArray2);
   var n = sortedArray1.length;
   var merged = [];
   var acc = 0;
