@@ -18,7 +18,7 @@ InversionCounter.prototype.countAndSort = function(array) {
   var firstHalfResults = self.countAndSort(array.slice(0,((n/2))));
   var secondHalfResults = self.countAndSort(array.slice( (n/2) , n));
   var mergeResults = self.mergeAndCount(firstHalfResults[1],
-                                        secondHalfResults[1]);
+      secondHalfResults[1]);
 
   var accumulator = (firstHalfResults[0] + secondHalfResults[0] + mergeResults[0]);
 
@@ -28,18 +28,36 @@ InversionCounter.prototype.countAndSort = function(array) {
 InversionCounter.prototype.mergeAndCount = function(sortedArray1, sortedArray2) {
   console.log(sortedArray1);
   console.log(sortedArray2);
+  var n = sortedArray1.length;
   var merged = [];
-  if (sortedArray1[0] < sortedArray2[0]) {
-    merged << sortedArray1[0];
+  var acc = 0;
+  var i = 0;
+  var j = 0;
 
-    merged
-    return([0, merged + sortedArray2])
-  } else {
-    merged << sortedArray2[0];
-
-    merged << sortedArray1[0];
-    return([1, merged])
+  while ((i < n) && (j < n)) {
+    if (sortedArray1[i] < sortedArray2[j]) {
+      merged.push(sortedArray1[i]);
+      i = i + 1;
+    } else {
+      merged.push(sortedArray2[j]);
+      j = j + 1;
+      acc = acc + 1;
+    };
   };
+
+  if (i == n) {
+    while (j < n) {
+      merged.push(sortedArray2[j]);
+      j = j + 1;
+    }
+  } else {
+    while (i < n) {
+      merged.push(sortedArray1[i]);
+      i = i + 1;
+    }
+  };
+
+  return([acc, merged]);
 };
 
 module.exports = InversionCounter;
