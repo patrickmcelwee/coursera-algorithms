@@ -61,9 +61,35 @@ describe("InversionCountery", function() {
     expect(result).toEqual(6);
   });
 
+  it("works for eight sorted integers", function() {
+    var result = counter.count([1, 2, 3, 4, 5, 6, 7, 8]);
+    expect(result).toEqual(0);
+  });
+
+  it("works for eight unsorted integers", function() {
+
+    var result = counter.count([2, 1, 3, 4, 5, 6, 7, 8]);
+    expect(result).toEqual(1);
+
+    var result = counter.count([2, 1, 4, 3, 5, 6, 7, 8]);
+    expect(result).toEqual(2);
+
+    var result = counter.count([2, 1, 3, 5, 4, 6, 7, 8]);
+    expect(result).toEqual(2);
+
+    var result = counter.count([2, 1, 3, 5, 4, 7, 6, 8]);
+    expect(result).toEqual(3);
+
+    var result = counter.count([3, 2, 1, 5, 4, 7, 6, 8]);
+    expect(result).toEqual(5);
+
+    var result = counter.count([3, 6, 2, 1, 5, 4, 7, 8]);
+    expect(result).toEqual(8);
+
+  });
+
   it("works for the problem", function() {
-    var result = counter.count([
-      54044, 14108, 79294, 29649, 25260, 60660, 2995, 53777, 49689, 9083, 16122,
+    var result = counter.count([54044, 14108, 79294, 29649, 25260, 60660, 2995, 53777, 49689, 9083, 16122,
       90436, 4615, 40660, 25675, 58943, 92904, 9900, 95588, 46120, 29390, 91323,
       85363, 45738, 80717, 57415, 7637, 8540, 6336, 45434, 65895, 61811, 8959, 9139,
       31027, 87662, 2484, 65550, 23260, 15616, 3490, 49568, 5979, 44737, 52808,
@@ -9140,8 +9166,7 @@ describe("InversionCountery", function() {
   91820, 47697, 32015, 27044, 90189, 23893, 50341, 30860, 68525, 45306, 84749,
   89346, 19381, 32075, 72690, 39462, 36326, 26401, 80383, 40265, 29576, 33026,
   94296, 10253, 20436, 82586, 836, 79862, 37223, 46982, 64399, 16774, 74018,
-  71187, 91901
-      ]);
+  71187, 91901]);
 
     expect(result).toEqual(1041012257);
 

@@ -20,7 +20,7 @@ InversionCounter.prototype.countAndSort = function(array) {
   var mergeResults = self.mergeAndCount(firstHalfResults[1],
       secondHalfResults[1]);
 
-  var accumulator = (firstHalfResults[0] + secondHalfResults[0] + mergeResults[0]);
+  var accumulator = firstHalfResults[0] + secondHalfResults[0] + mergeResults[0];
 
   return [accumulator, mergeResults[1]];
 };
@@ -39,7 +39,7 @@ InversionCounter.prototype.mergeAndCount = function(sortedArray1, sortedArray2) 
     } else {
       merged.push(sortedArray2[j]);
       j = j + 1;
-      acc = acc + (n - i);
+      acc = acc + n - i;
     };
   };
 
