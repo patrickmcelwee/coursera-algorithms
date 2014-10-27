@@ -9168,7 +9168,7 @@ describe("InversionCountery", function() {
   94296, 10253, 20436, 82586, 836, 79862, 37223, 46982, 64399, 16774, 74018,
   71187, 91901]);
 
-    expect(result).toEqual(1041012257);
+    expect(result).toEqual(2407905288);
 
   });
 })
